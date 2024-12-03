@@ -1,0 +1,21 @@
+group,value,color
+Gram positive_1,-0.99986,LRFI
+Gram positive_2,-0.981584,LRFI
+Gram positive_3,-0.464152,LRFI
+Gram positive_4,-0.493308,LRFI
+Gram positive_5,0.459423,HRFI
+Gram negative_1,0.028335,HRFI
+Gram negative_2,0.027829,HRFI
+Gram negative_3,0.576229,HRFI
+Gram negative_4,0.624124,HRFI
+Gram negative_5,-0.573032,LRFI
+Potential pathogens_1,-0.2736746,LRFI
+Potential pathogens_2,-0.2400765,LRFI
+Potential pathogens_3,0.6376342,HRFI
+Potential pathogens_4,0.637585,HRFI
+Potential pathogens_5,-0.6024064,LRFI
+Stress tolerance_1,-0.999479,LRFI
+Stress tolerance_2,0.98958,HRFI
+Stress tolerance_3,-0.78107,LRFI
+Stress tolerance_4,-0.772614,LRFI
+Stress tolerance_5,0.803175,HRFI

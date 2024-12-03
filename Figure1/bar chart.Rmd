@@ -1,0 +1,34 @@
+---
+title: "Bar chart of bugbase data"
+author: "cylin"
+date: "2024-12-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+library(ggplot2)
+plant_all_stat<-read.csv('barplot_FMT.csv')
+colnames(plant_all_stat)[1] <- "days"
+p1 <- ggplot(plant_all_stat, aes(days, Value.mean, fill = variable)) +
+  geom_col(position = position_dodge(width = 0.5), width = 0.5, size = 0.3, colour = 'black') +
+  geom_errorbar(aes(ymin = Value.mean - Value.sd, ymax = Value.mean + Value.sd), width = 0.3, size = 0.3, position = position_dodge(0.5)) +
+  theme(panel.grid = element_blank(), panel.background = element_rect(color = 'black', fill = 'transparent'), legend.title = element_blank()) +
+  labs(title = 'Potential pathogens', x = 'Time (days)', y = 'Relative abundance (%)') +
+  theme(plot.title = element_text(hjust = 0.5))+
+  geom_hline(yintercept = 0, size = 0.3) +
+  scale_y_continuous(breaks = seq(-1, 1, 0.5), labels = as.character(abs(seq(-1, 1, 0.5))), limits = c(-1, 1)) +
+  annotate('text', label = 'Cecal microbiota', 1.5, 1) +
+  annotate('text', label = 'IgA+ microbiota', 1.5, -1)
+p1
+
+ggsave('Bugbase-FMT.pdf', p1, width = 4.2, height = 4)
+ggsave('Bugbase-FMT.png', p1, width = 4.2, height = 4)
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

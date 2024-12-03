@@ -1,0 +1,43 @@
+---
+title: "Lollipopchart"
+author: "cylin"
+date: "2024-12-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+library(ggplot2)
+library(ggprism)
+
+df<-read.csv('LollipopChart.csv')
+
+p1 <- ggplot(df) +
+  geom_segment(aes(x=group, xend=group, y=0, yend=value), color="grey",size=1) +
+  geom_point( aes(x=group, y=value, color = color), size=4) +
+  geom_hline(yintercept = 0, lty=2,color = 'grey', lwd=0.8) + #辅助线
+  theme_prism(palette = "pearl",
+              base_fontface = "plain", 
+              base_family = "serif", 
+              base_size = 14, 
+              base_line_size = 0.8, 
+              axis_text_angle = 45) +
+  theme(legend.position = "none") +
+  xlab("XXXX") +
+  ylab("Relative abundance (%)") +
+  ggtitle("Bugbase Analysis")
+p1
+#横向排布
+p2 <- p1+  coord_flip()
+p2
+ggsave('cecal microbiota_横.pdf', p1, width = 6, height = 4.2)
+ggsave('cecal microbiota_横.png', p1, width = 6, height = 4.2)
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

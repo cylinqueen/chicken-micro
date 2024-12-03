@@ -1,0 +1,13 @@
+﻿days,Value.mean,Value.sd,variable,GROUP,plant
+gram negative,0.2624056,0.13947337,2FMT,HFMT     ,Cecal microbiota
+gram negative,0.4228599,0.08025629,1HRFI,HRFI      ,Cecal microbiota
+gram negative,0.2858492,0.12289511,3LRFI,LRFI ,Cecal microbiota
+gram negative,-0.08858172,-0.02958453,2FMT,HFIgA,IgA+microbiota
+gram negative,-0.1048266,-0.03419658,1HRFI,HIgA,IgA+microbiota
+gram negative,-0.0943707,-0.05165836,3LRFI,LIgA,IgA+microbiota
+potential pathogens,0.3032757,0.14199995,2FMT,HFMT     ,Cecal microbiota
+potential pathogens,0.4647025,0.09501742,1HRFI,HRFI      ,Cecal microbiota
+potential pathogens,0.3675616,0.1362464,3LRFI,LRFI ,Cecal microbiota
+potential pathogens,-0.8555831,-0.05046575,2FMT,HFIgA,IgA+microbiota
+potential pathogens,-0.8485533,-0.06916602,1HRFI,HIgA,IgA+microbiota
+potential pathogens,-0.8841019,-0.0477608,3LRFI,LIgA,IgA+microbiota
