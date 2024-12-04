@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+```{r}
 library(ggplot2)
 plant_all_stat<-read.csv('barplot_FMT.csv')
 colnames(plant_all_stat)[1] <- "days"
@@ -30,5 +31,8 @@ p1
 
 ggsave('Bugbase-FMT.pdf', p1, width = 4.2, height = 4)
 ggsave('Bugbase-FMT.png', p1, width = 4.2, height = 4)
+```
+
+
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
